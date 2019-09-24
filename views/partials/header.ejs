@@ -10,17 +10,23 @@
 
 <!-- Uses a transparent header that draws on top of the layout's background -->
 <style>
+    html {
+        scroll-behavior: smooth;
+    }
     .demo-layout-transparent {
-      background: url('pic/PGCTF20-bg.png') center / cover;
+        background: url('pic/PGCTF20-bg.png') center / cover;
     }
     .demo-layout-transparent .mdl-layout__header,
     .demo-layout-transparent .mdl-layout__drawer-button {
       /* This background is dark, so we set text to white. Use 87% black instead if
          your background is light. */
-      color: white;
+        color: white;
     }
     .demo-card-wide.mdl-card {
         width: 512px;
+    }
+    .grid-card.mdl-card {
+        width: 90%;
     }
     .demo-card-wide > .mdl-card__menu ion-icon {
         color: rgb(0, 162, 255);
@@ -30,24 +36,26 @@
 <header class="mdl-layout__header mdl-layout__header--transparent">
 <div class="mdl-layout__header-row">
     <!-- Title -->
-    <span class="mdl-layout-title">PGCTF20</span>
+    <span class="mdl-layout-title"><a style="text-decoration:none;color:white;" href="/" >PGCTF20</a></span>
     <!-- Add spacer, to align navigation to the right -->
     <div class="mdl-layout-spacer"></div>
     <!-- Navigation -->
     <nav class="mdl-navigation">
-    <a class="mdl-navigation__link" href="">About</a>
-    <a class="mdl-navigation__link" href="">Team</a>
-    <a class="mdl-navigation__link" href="">Contact</a>
-    <a class="mdl-navigation__link" href="">Register</a>
+    <a class="mdl-navigation__link" href="about">About</a>
+    <a class="mdl-navigation__link" href="statistics">Statistics</a>
+    <a class="mdl-navigation__link" href="team">Team</a>
+    <a class="mdl-navigation__link" href="contact">Contact</a>
+    <a class="mdl-navigation__link" href="register">Register</a>
     </nav>
 </div>
 </header>
 <div class="mdl-layout__drawer">
-<span class="mdl-layout-title">PGCTF20</span>
+<a href="/"><span class="mdl-layout-title">PGCTF20</span></a>
 <nav class="mdl-navigation">
-    <a class="mdl-navigation__link" href="">About</a>
-    <a class="mdl-navigation__link" href="">Team</a>
-    <a class="mdl-navigation__link" href="">Contact</a>
-    <a class="mdl-navigation__link" href="">Register</a>
+    <a class="mdl-navigation__link" href="about">About</a>
+    <a class="mdl-navigation__link" href="statistics">Statistics</a>
+    <a class="mdl-navigation__link" href="team">Team</a>
+    <a class="mdl-navigation__link" href="contact">Contact</a>
+    <a class="mdl-navigation__link" href="register">Register</a>
 </nav>
 </div>
