@@ -1,0 +1,21 @@
+{
+  "name": "pgctf",
+  "version": "1.0.0",
+  "description": "A website built for PGCTF.",
+  "main": "start.js",
+  "scripts": {
+    "watch": "nodemon ./start.js",
+    "start": "node start.js"
+  },
+  "author": "Charles Truluck",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "material-design-lite": "^1.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  },
+  "private": true
+}
