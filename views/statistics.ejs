@@ -4,8 +4,123 @@
         <% include partials/header %>
         <body>
             <main class="mdl-layout__content">
-                <section class="page-content" style="margin-top: 17em;">
-                    <h1>Hello!</h1>
+                <section style="margin-top: 8em;">
+                    <h1 style="color:white;text-align:center;"><strong>The talk</strong></h1>
+                </section>
+                <section style="margin-top: 20em;">
+                    <div class="mdl-grid" style="justify-content: center;">
+                        <!-- <div class="mdl-layout-spacer mdl-layout--large-screen-only"></div> -->
+                        <div class="about-card-wide mdl-card mdl-shadow--6dp mdl-cell mdl-cell--middle mdl-cell--6-col mdl-cell--8-col-phone">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text center"><strong>Would you compete in PGCTF next year?</strong></h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div class="ct-chart ct-perfect-fourth"></div>
+                                <script>
+                                    var data = {
+                                            labels: ['Yes', 'Maybe'],
+                                            series: [15, 2]
+                                        };
+
+                                        var options = {
+                                            labelInterpolationFnc: function (value) {
+                                                return value[0]
+                                            }
+                                        };
+
+                                        var responsiveOptions = [
+                                            ['screen and (min-width: 640px)', {
+                                                chartPadding: 30,
+                                                labelOffset: 50,
+                                                labelDirection: 'explode',
+                                                labelInterpolationFnc: function (value) {
+                                                    return value;
+                                                }
+                                            }],
+                                            ['screen and (min-width: 1024px)', {
+                                                labelOffset: 80,
+                                                chartPadding: 20
+                                            }]
+                                        ];
+
+                                        new Chartist.Pie('.ct-chart', data, options, responsiveOptions);
+                                </script>
+                            </div>
+                        </div>
+                        <div class="about-card-wide mdl-card mdl-shadow--6dp mdl-cell mdl-cell--6-col mdl-cell--8-col-phone">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text center"><strong>PGCTF was a valuable experience</strong></h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div class="ct-chart-learning"></div>
+                                <script>
+                                    new Chartist.Bar('.ct-chart-learning', {
+                                        labels: [1, 2, 3, 4, 5],
+                                        series: [
+                                            [0, 0, 1, 1, 16]
+                                        ]
+                                    }, {
+                                        seriesBarDistance: 0,
+                                        low: 0,
+                                        high: 16,
+                                        height: '300px'
+                                    }).on('draw', function (data) {
+                                        if (data.type === 'bar') {
+                                            data.element.attr({
+                                                style: 'stroke-width: 30px'
+                                            });
+                                        }
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-grid" style="justify-content: center;">
+                        <div class="about-card-wide mdl-card mdl-shadow--6dp mdl-cell mdl-cell--middle mdl-cell--6-col mdl-cell--8-col-phone">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text center"><strong>Favorite part of the event</strong></h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <p style="font-size: 15px !important">
+                                    <blockquote>Opportunity to learn</blockquote>
+                                    <blockquote>The food</blockquote>
+                                    <blockquote>The music</blockquote>
+                                    <blockquote>The people and trying to work out the problems</blockquote>
+                                    <blockquote>It was all good</blockquote>
+                                    <blockquote>The overall experience of the event</blockquote>
+                                    <blockquote>Collaborating with my team and sense of achievement when we completed a complex problem</blockquote>
+                                    <blockquote>The staff being able to give hints, seeing as they made the problems their help was very valuable</blockquote>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="about-card-wide mdl-card mdl-shadow--6dp mdl-cell mdl-cell--6-col mdl-cell--8-col-phone">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text center"><strong>Problem Quality</strong></h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div class="ct-chart-b"></div>
+                                <script>
+                                    new Chartist.Bar('.ct-chart-b', {
+                                        labels: [1, 2, 3, 4, 5],
+                                        series: [
+                                            [0, 0, 3, 12, 2]
+                                        ]
+                                    }, {
+                                        seriesBarDistance: 0,
+                                        low: 0,
+                                        high: 16,
+                                        height: '300px'
+                                    }).on('draw', function (data) {
+                                        if (data.type === 'bar') {
+                                            data.element.attr({
+                                                style: 'stroke-width: 30px'
+                                            });
+                                        }
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </main>
         </body>
