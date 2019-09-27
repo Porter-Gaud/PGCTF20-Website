@@ -41,10 +41,81 @@
                                 </button></a>
                             </div>
                             <div class="mdl-card__actions mdl-card--border">
-                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="webcal://images/pgctf.ics" download>
+                                <a id="cal" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                     Add to Calendar
                                 </a>
                             </div>
+
+                            <script>
+                            var icsMSG = `BEGIN:VCALENDAR
+CALSCALE:GREGORIAN
+VERSION:2.0
+X-WR-CALNAME:PGCTF20
+METHOD:PUBLISH
+PRODID:-//Apple Inc.//Mac OS X 10.15//EN
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+DTSTART:20070311T020000
+TZNAME:EDT
+TZOFFSETTO:-0400
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+DTSTART:20071104T020000
+TZNAME:EST
+TZOFFSETTO:-0500
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+TRANSP:OPAQUE
+DTEND;TZID=America/New_York:20200222T150000
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+UID:B20848F9-3EC6-426A-9D6D-5018C892A053
+DTSTAMP:20190926T164331Z
+LOCATION:300 Albemarle Rd\nCharleston\, SC\, United States
+DESCRIPTION:
+STATUS:CONFIRMED
+SEQUENCE:1
+SUMMARY:PGCTF20
+DTSTART;TZID=America/New_York:20200222T090000
+LAST-MODIFIED:20190926T164331Z
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-MAPKIT-HANDLE=CAESuAII2TIa
+ EgmYWTrVEGNAQBEREN39u/1TwCKqAQoNVW5pdGVkIFN0YXRlcxICVVMaDlNvdXRoIENhcm9s
+ aW5hIgJTQyoKQ2hhcmxlc3RvbjIKQ2hhcmxlc3RvbjoFMjk0MDdCHVdlc3QgQXNobGV5IElu
+ c2lkZSBNYXJrIENsYXJrUgxBbGJlbWFybGUgUmRaAzMwMGIQMzAwIEFsYmVtYXJsZSBSZIoB
+ HVdlc3QgQXNobGV5IEluc2lkZSBNYXJrIENsYXJrKhAzMDAgQWxiZW1hcmxlIFJkMhAzMDAg
+ QWxiZW1hcmxlIFJkMhVDaGFybGVzdG9uLCBTQyAgMjk0MDcyDVVuaXRlZCBTdGF0ZXM4OUAA
+ WiQKIhISCZhZOtUQY0BAEREQ3f27/VPAGNkyIN3+6o64iKPwzAE=;X-APPLE-RADIUS=313.
+ 4185333822118;X-TITLE="300 Albemarle Rd\nCharleston, SC, United States":
+ geo:32.773951,-79.964599
+CREATED:20190926T164331Z
+BEGIN:VALARM
+UID:A7404428-3EEC-4A88-B964-AAAE24363B27
+ACTION:AUDIO
+TRIGGER:-P2D
+ATTACH;VALUE=URI:Chord
+X-WR-ALARMUID:A7404428-3EEC-4A88-B964-AAAE24363B27
+END:VALARM
+BEGIN:VALARM
+UID:F5795522-A314-4E9D-827B-B17B6CCAB284
+ACTION:AUDIO
+TRIGGER:-P1D
+ATTACH;VALUE=URI:Chord
+X-WR-ALARMUID:F5795522-A314-4E9D-827B-B17B6CCAB284
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+
+                            `
+                            $('#cal').click(function () {
+                                window.open( "data:text/calendar;charset=utf8," + escape(icsMSG));
+                            });
+                            </script>
+
                         </div>
                         <div class="mdl-layout-spacer"></div>
                         <div class="demo-card-wide mdl-card mdl-cell--middle mdl-shadow--6dp mdl-cell mdl-cell--4-col">
